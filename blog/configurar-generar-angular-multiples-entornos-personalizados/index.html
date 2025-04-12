@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configurar y generar aplicaciones Angular para múltiples entornos personalizados | Rafael Neto</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#d66056">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-S8PRT356B6"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-S8PRT356B6', { 'anonymize_ip': true });</script>
+    <link rel="alternate" type="application/rss+xml" href="https://rafaelneto.dev/rss.xml" title="Rafael Neto RSS Feed">
+    <meta name="description" content="Cuando generamos una aplicación con Angular CLI, la plantilla inicial de los ficheros package.json, angular.json y environments.ts solo cuentan de manera predeterminada con la configuración para los entornos de desarrollo y producción, ...">
+    <meta property="article:published_time" content="2021-09-18T00:00:00.000Z">
+    <meta property="og:site_name" content="Rafael Neto">
+    <meta property="og:title" content="Configurar y generar aplicaciones Angular para múltiples entornos personalizados">
+    <meta property="og:description" content="Cuando generamos una aplicación con Angular CLI, la plantilla inicial de los ficheros package.json, angular.json y environments.ts solo cuentan de manera predeterminada con la configuración para los entornos de desarrollo y producción, ...">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/blog/configurar-generar-angular-multiples-entornos-personalizados/">
+    <meta name="twitter:title" content="Configurar y generar aplicaciones Angular para múltiples entornos personalizados">
+    <meta name="twitter:description" content="Cuando generamos una aplicación con Angular CLI, la plantilla inicial de los ficheros package.json, angular.json y environments.ts solo cuentan de manera predeterminada con la configuración para los entornos de desarrollo y producción, ...">
+    <meta name="twitter:url" content="/blog/configurar-generar-angular-multiples-entornos-personalizados/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Angular">
+    <meta property="article:tag" content="Angular">
+    <meta name="theme-color" content="#d66056">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/icon-144x144">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link href="https://rafaelneto.dev/blog/configurar-generar-angular-multiples-entornos-personalizados/" rel="canonical" />
+    <link rel="preload" href="/assets/css/0.styles.bb0c19ce.css" as="style"><link rel="preload" href="/assets/js/app.ee019d85.js" as="script"><link rel="preload" href="/assets/js/4.35e6b205.js" as="script"><link rel="preload" href="/assets/js/1.801c1b6e.js" as="script"><link rel="preload" href="/assets/js/57.dd9ffee0.js" as="script"><link rel="prefetch" href="/assets/js/11.7f50e1d9.js"><link rel="prefetch" href="/assets/js/12.e5fcd202.js"><link rel="prefetch" href="/assets/js/13.89648ad6.js"><link rel="prefetch" href="/assets/js/14.c6a608cd.js"><link rel="prefetch" href="/assets/js/15.00d4c987.js"><link rel="prefetch" href="/assets/js/16.f0891c93.js"><link rel="prefetch" href="/assets/js/17.93778a3e.js"><link rel="prefetch" href="/assets/js/18.1468113e.js"><link rel="prefetch" href="/assets/js/19.40f9e796.js"><link rel="prefetch" href="/assets/js/2.ff0695d0.js"><link rel="prefetch" href="/assets/js/20.7c41a12f.js"><link rel="prefetch" href="/assets/js/21.fc80806c.js"><link rel="prefetch" href="/assets/js/22.40f1a2c2.js"><link rel="prefetch" href="/assets/js/23.099cf4dd.js"><link rel="prefetch" href="/assets/js/24.27062614.js"><link rel="prefetch" href="/assets/js/25.db00c68a.js"><link rel="prefetch" href="/assets/js/26.75eced52.js"><link rel="prefetch" href="/assets/js/27.141748c3.js"><link rel="prefetch" href="/assets/js/28.4a2b2f52.js"><link rel="prefetch" href="/assets/js/29.f700ec1a.js"><link rel="prefetch" href="/assets/js/3.51e60054.js"><link rel="prefetch" href="/assets/js/30.303c9639.js"><link rel="prefetch" href="/assets/js/31.61e0e098.js"><link rel="prefetch" href="/assets/js/32.2e93f8ac.js"><link rel="prefetch" href="/assets/js/33.7197ed8c.js"><link rel="prefetch" href="/assets/js/34.70cab748.js"><link rel="prefetch" href="/assets/js/35.a2938760.js"><link rel="prefetch" href="/assets/js/36.344d5f62.js"><link rel="prefetch" href="/assets/js/37.ccd6ef99.js"><link rel="prefetch" href="/assets/js/38.f747c3ac.js"><link rel="prefetch" href="/assets/js/39.0014b129.js"><link rel="prefetch" href="/assets/js/40.4bcb8f39.js"><link rel="prefetch" href="/assets/js/41.54d85b43.js"><link rel="prefetch" href="/assets/js/42.8116cd4c.js"><link rel="prefetch" href="/assets/js/43.6f3e70fc.js"><link rel="prefetch" href="/assets/js/44.d6d8abff.js"><link rel="prefetch" href="/assets/js/45.cd9babd6.js"><link rel="prefetch" href="/assets/js/46.cb867dfa.js"><link rel="prefetch" href="/assets/js/47.070d730e.js"><link rel="prefetch" href="/assets/js/48.0cdf0dc3.js"><link rel="prefetch" href="/assets/js/49.3c348071.js"><link rel="prefetch" href="/assets/js/5.d96a2b8c.js"><link rel="prefetch" href="/assets/js/50.70221375.js"><link rel="prefetch" href="/assets/js/51.4d3bfe99.js"><link rel="prefetch" href="/assets/js/52.290b62dd.js"><link rel="prefetch" href="/assets/js/53.bdead276.js"><link rel="prefetch" href="/assets/js/54.af6c538d.js"><link rel="prefetch" href="/assets/js/55.7aa7f892.js"><link rel="prefetch" href="/assets/js/56.fd25720a.js"><link rel="prefetch" href="/assets/js/58.a9fa94d5.js"><link rel="prefetch" href="/assets/js/59.b24205ab.js"><link rel="prefetch" href="/assets/js/6.fff243bb.js"><link rel="prefetch" href="/assets/js/60.c48f9f3c.js"><link rel="prefetch" href="/assets/js/61.6ae343dc.js"><link rel="prefetch" href="/assets/js/62.d5032578.js"><link rel="prefetch" href="/assets/js/63.0566b7b0.js"><link rel="prefetch" href="/assets/js/64.39f75b2c.js"><link rel="prefetch" href="/assets/js/65.cafbd489.js"><link rel="prefetch" href="/assets/js/66.d2dbf74b.js"><link rel="prefetch" href="/assets/js/67.08618c54.js"><link rel="prefetch" href="/assets/js/68.161678f2.js"><link rel="prefetch" href="/assets/js/69.788810b6.js"><link rel="prefetch" href="/assets/js/7.170b11d7.js"><link rel="prefetch" href="/assets/js/70.fbb3b202.js"><link rel="prefetch" href="/assets/js/71.a3d8b7aa.js"><link rel="prefetch" href="/assets/js/72.46d6c318.js"><link rel="prefetch" href="/assets/js/73.e99efe3a.js"><link rel="prefetch" href="/assets/js/74.fd9eaff7.js"><link rel="prefetch" href="/assets/js/75.6782e97d.js"><link rel="prefetch" href="/assets/js/76.06524762.js"><link rel="prefetch" href="/assets/js/77.aec65f81.js"><link rel="prefetch" href="/assets/js/78.d7ce09bc.js"><link rel="prefetch" href="/assets/js/79.28e1de1e.js"><link rel="prefetch" href="/assets/js/8.13e5b4ae.js"><link rel="prefetch" href="/assets/js/80.917ff461.js"><link rel="prefetch" href="/assets/js/81.745e410a.js"><link rel="prefetch" href="/assets/js/82.9ef78695.js"><link rel="prefetch" href="/assets/js/83.a4ce6c69.js"><link rel="prefetch" href="/assets/js/84.5c274b85.js"><link rel="prefetch" href="/assets/js/85.1991c579.js"><link rel="prefetch" href="/assets/js/86.bdab760b.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.8d41f623.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.bb0c19ce.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Rafael Neto </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/en/blog/" class="nav-link">English</a></li><li class="nav-item"><a href="/blog/" class="nav-link router-link-active">Blog</a></li><li class="nav-item"><a href="/tag/" class="nav-link">Tags</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Rafael Neto </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/en/blog/" class="nav-link">English</a></li><li class="mobile-nav-item"><a href="/blog/" class="nav-link router-link-active">Blog</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">Tags</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        
+      </h1> <div class="post-meta"><!----> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2021-9-18">
+      2021-09-18
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-42ccfcd5><a href="/tag/Angular" data-v-42ccfcd5><span data-v-42ccfcd5>Angular</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h1 id="configurar-y-generar-aplicaciones-angular-para-multiples-entornos-personalizados"><a href="#configurar-y-generar-aplicaciones-angular-para-multiples-entornos-personalizados" class="header-anchor">#</a> Configurar y generar aplicaciones Angular para múltiples entornos personalizados</h1> <!----> <p>Cuando generamos una aplicación con Angular CLI, la plantilla inicial de los ficheros <em>package.json</em>, <em>angular.json</em> y <em>environments.ts</em> solo cuentan de manera predeterminada con la configuración para los entornos de desarrollo y producción, así que ¿cómo podemos extender esa configuración para poder definir nuevos entornos personalizados?</p> <p>Para ello voy a plantear una serie de cambios sobre dichas plantillas con lo que finalmente tendremos la configuración para cuatro entornos de implementación:</p> <ul><li><em>default</em>: Será el entorno predeterminado de ejecución local.</li> <li><em>development</em>: Será el entorno de desarrollo.</li> <li><em>staging</em>: Será el entorno de preproducción.</li> <li><em>production</em>: Será el entorno de producción.</li></ul> <h2 id="extender-la-configuracion-de-la-plantilla-inicial-de-package-json"><a href="#extender-la-configuracion-de-la-plantilla-inicial-de-package-json" class="header-anchor">#</a> Extender la configuración de la plantilla inicial de <em>package.json</em></h2> <p>Esta es la sección <em>scripts</em> de un fichero <em>package.json</em> estándar de una aplicación Angular:</p> <div class="language-js extra-class"><pre class="language-js"><code>…<span class="token punctuation">,</span>
+  <span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;ng&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;start&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng serve&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng build&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;test&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng test&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;lint&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng lint&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;e2e&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng e2e&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+…<span class="token punctuation">,</span>
+</code></pre></div><p><em>package.json</em></p> <p>Y esta sería la misma sección del fichero aplicando las modificaciones que propongo:</p> <div class="language-js extra-class"><pre class="language-js"><code>…<span class="token punctuation">,</span>
+  <span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;ng&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;start&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng serve -o&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;start:development&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng serve -o --configuration=development&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;start:staging&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng serve -o --configuration=staging&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;start:production&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng serve -o --configuration=production&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng build&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;build:development&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng build --configuration=development&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;build:staging&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng build --configuration=staging&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;build:production&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng build --configuration=production&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;test&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng test&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;lint&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng lint&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;e2e&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng e2e&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;stats&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ng build --stats-json &amp; webpack-bundle-analyzer dist/my-app/stats.json&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+…<span class="token punctuation">,</span>
+</code></pre></div><p><em>package.json</em></p> <p>Y cuyos cambios realizados han sido:</p> <ul><li>Se agregan tantos comandos <code>start</code> como entornos (<code>start:development</code>, <code>start:staging</code>, y <code>start:production</code>) con el parámetro <code>--configuration</code> establecido con el nombre de cada entorno (veremos su explicación cuando veamos el fichero <em>angular.json</em>).</li> <li>Se agregan tantos comandos <code>build</code> como entornos (<code>build:development</code>, <code>build:staging</code> y <code>build:production</code>) también con el parámetro <code>--configuration</code> establecido con el nombre de cada entorno.</li> <li>Al comando <code>ng serve</code> he añadido la opción <code>--o</code>, que aunque no sea relevante para la configuración por entorno, sí que nos hace más cómoda la ejecución de la aplicación al hacer que se abra automáticamente nuestro navegador predeterminado.</li> <li>Y para terminar también he añadido como mejora al fichero, más allá de la configuración por entorno, el comando <code>stats</code> para el <a href="/blog/optimizar-angular-analisis-paquetes-npm-webpack/">análisis de paquetes npm con webpack</a>.</li></ul> <h2 id="extender-la-configuracion-de-la-plantilla-inicial-de-angular-json"><a href="#extender-la-configuracion-de-la-plantilla-inicial-de-angular-json" class="header-anchor">#</a> Extender la configuración de la plantilla inicial de <em>angular.json</em></h2> <p>Estas son las secciones <em>architect.build.configurations</em> y <em>architect.serve</em> de un fichero <em>angular.json</em> estándar de una aplicación Angular:</p> <div class="language-js extra-class"><pre class="language-js"><code>…<span class="token punctuation">,</span>
+  <span class="token string">&quot;architect&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;build&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token operator">...</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;configurations&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;production&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;fileReplacements&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;replace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;src/environments/environment.ts&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;with&quot;</span><span class="token operator">:</span> <span class="token string">&quot;src/environments/environment.prod.ts&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;optimization&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;outputHashing&quot;</span><span class="token operator">:</span> <span class="token string">&quot;all&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;sourceMap&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;namedChunks&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;extractLicenses&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;vendorChunk&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;buildOptimizer&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;budgets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;initial&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumWarning&quot;</span><span class="token operator">:</span> <span class="token string">&quot;500kb&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumError&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1mb&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;anyComponentStyle&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumWarning&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2kb&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumError&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4kb&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;serve&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token operator">...</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;configurations&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;production&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;browserTarget&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-app:build:production&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token operator">...</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+…<span class="token punctuation">,</span>
+</code></pre></div><p><em>angular.json</em></p> <p>Y estas serían las mismas secciones del fichero aplicando las modificaciones que propongo:</p> <div class="language-js extra-class"><pre class="language-js"><code>…<span class="token punctuation">,</span>
+  <span class="token string">&quot;architect&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;build&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token operator">...</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;configurations&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;development&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;fileReplacements&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;replace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;src/environments/environment.ts&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;with&quot;</span><span class="token operator">:</span> <span class="token string">&quot;src/environments/environment.development.ts&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;optimization&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;outputHashing&quot;</span><span class="token operator">:</span> <span class="token string">&quot;all&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;sourceMap&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;namedChunks&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;extractLicenses&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;vendorChunk&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;buildOptimizer&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;budgets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;initial&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumWarning&quot;</span><span class="token operator">:</span> <span class="token string">&quot;500kb&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumError&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1mb&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;anyComponentStyle&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumWarning&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2kb&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumError&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4kb&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;staging&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;fileReplacements&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;replace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;src/environments/environment.ts&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;with&quot;</span><span class="token operator">:</span> <span class="token string">&quot;src/environments/environment.staging.ts&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;optimization&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;outputHashing&quot;</span><span class="token operator">:</span> <span class="token string">&quot;all&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;sourceMap&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;namedChunks&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;extractLicenses&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;vendorChunk&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;buildOptimizer&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;budgets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;initial&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumWarning&quot;</span><span class="token operator">:</span> <span class="token string">&quot;500kb&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumError&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1mb&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;anyComponentStyle&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumWarning&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2kb&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumError&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4kb&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;production&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;fileReplacements&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;replace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;src/environments/environment.ts&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;with&quot;</span><span class="token operator">:</span> <span class="token string">&quot;src/environments/environment.production.ts&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;optimization&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;outputHashing&quot;</span><span class="token operator">:</span> <span class="token string">&quot;all&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;sourceMap&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;namedChunks&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;extractLicenses&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;vendorChunk&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;buildOptimizer&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;budgets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;initial&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumWarning&quot;</span><span class="token operator">:</span> <span class="token string">&quot;500kb&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumError&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1mb&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;anyComponentStyle&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumWarning&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2kb&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;maximumError&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4kb&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;serve&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token operator">...</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;configurations&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;development&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;browserTarget&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-app:build:development&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;staging&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;browserTarget&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-app:build:staging&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;production&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;browserTarget&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-app:build:production&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token operator">...</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+…<span class="token punctuation">,</span>
+</code></pre></div><p><em>angular.json</em></p> <p>Y cuyos cambios realizados han sido:</p> <ul><li>Bajo la sección <em>architect.build.configurations</em> se agregan tantas configuraciones como entornos personalizados hayamos definido (el <em>default</em> usará la configuración por defecto de desarrollo de Angular, como el fichero <em>environment.ts</em>). Estas configuraciones deben corresponder con los nombres especificados en el parámetro <code>--configuration</code> de los comandos <code>start</code> y <code>build</code> personalizados que hemos creado en el fichero <em>package.json</em>. Como el fichero ya incluye la configuración <em>production</em>, sólo tenemos que crear las configuraciones <em>development</em> y <em>staging</em>.</li> <li>En cada configuración creada bajo la sección <em>architect.build.configurations</em>, hemos personalizado los nombres de los ficheros de entorno (sección <em>fileReplacements</em>) que vamos a usar, en nuestro caso <em>environment.development.ts</em>, <em>environment.staging.ts</em> y <em>environment.production.ts</em> (hemos sustituido el nombre del fichero original <em>environment.prod.ts</em> para mantener la coherencia con los nuevos que hemos creado).</li> <li>A la sección <em>architect.serve</em> hemos añadido los dos nuevos entornos que nos faltaban (<em>devlopment</em> y <em>staging</em>) dado que el de producción ya estaba creado.</li></ul> <h2 id="extender-la-configuracion-de-la-plantilla-inicial-de-environment-ts"><a href="#extender-la-configuracion-de-la-plantilla-inicial-de-environment-ts" class="header-anchor">#</a> Extender la configuración de la plantilla inicial de <em>environment.ts</em></h2> <p>Dado que ya contamos con los ficheros de configuración de entorno <em>environment.ts</em> y <em>environment.prod.ts</em>, lo único que tenemos que hacer es:</p> <ul><li>Crear los nuevos ficheros <em>environment.development.ts</em> y <em>environment.staging.ts</em>.</li> <li>Modificar el nombre del fichero <em>environment.prod.ts</em> por <em>environment.production.ts</em>.</li></ul> <h2 id="usar-la-configuracion-personalizada-segun-entorno-de-ejecucion"><a href="#usar-la-configuracion-personalizada-segun-entorno-de-ejecucion" class="header-anchor">#</a> Usar la configuración personalizada según entorno de ejecución</h2> <p>A partir de este momento ya podemos arrancar nuestra aplicación o empaquetarla para cada uno de los entornos definidos de la siguiente manera:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> run start
+<span class="token function">npm</span> run start:development
+<span class="token function">npm</span> run start:staging
+<span class="token function">npm</span> run start:production
+
+<span class="token function">npm</span> run build
+<span class="token function">npm</span> run build:development
+<span class="token function">npm</span> run build:staging
+<span class="token function">npm</span> run build:production
+</code></pre></div><blockquote><p>En el caso del comando <code>start</code>, podríamos obviar el comando <code>run</code> que le precede y simplificarlo con <code>npm start</code> ya que por sí mismo <code>start</code> es un comando de <em>npm</em>.</p></blockquote> <hr> <!----></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#extender-la-configuracion-de-la-plantilla-inicial-de-package-json" title="Extender la configuración de la plantilla inicial de package.json">Extender la configuración de la plantilla inicial de package.json</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#extender-la-configuracion-de-la-plantilla-inicial-de-angular-json" title="Extender la configuración de la plantilla inicial de angular.json">Extender la configuración de la plantilla inicial de angular.json</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#extender-la-configuracion-de-la-plantilla-inicial-de-environment-ts" title="Extender la configuración de la plantilla inicial de environment.ts">Extender la configuración de la plantilla inicial de environment.ts</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#usar-la-configuracion-personalizada-segun-entorno-de-ejecucion" title="Usar la configuración personalizada según entorno de ejecución">Usar la configuración personalizada según entorno de ejecución</a></div></div></div></div> <footer class="footer" data-v-fdbf4940><div class="footer-left-wrap" data-v-fdbf4940><ul class="contact" data-v-fdbf4940><li class="contact-item" data-v-fdbf4940><a href="https://x.com/RNeto" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-fdbf4940><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter" data-v-fdbf4940><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" data-v-fdbf4940></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-fdbf4940><ul class="copyright" data-v-fdbf4940><li class="copyright-item" data-v-fdbf4940><a href="/index.html" class="nav-link" data-v-fdbf4940>Rafael Neto © 2025</a></li></ul></div></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.ee019d85.js" defer></script><script src="/assets/js/4.35e6b205.js" defer></script><script src="/assets/js/1.801c1b6e.js" defer></script><script src="/assets/js/57.dd9ffee0.js" defer></script>
+  </body>
+</html>
