@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Rafael Neto</title>
+        <link>https://rafaelneto.dev</link>
+        <description>Apuntes de un programador Full Stack, JavaScript, HTML, CSS, .NET</description>
+        <lastBuildDate>Wed, 25 Nov 2026 17:46:09 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
+        <item>
+            <title><![CDATA[Navegación entre componentes con Angular Elements y el patrón Mediator]]></title>
+            <link>https://rafaelneto.dev/blog/navegacion-componentes-angular-elements-mediator/</link>
+            <guid>https://rafaelneto.dev/blog/navegacion-componentes-angular-elements-mediator/</guid>
+            <pubDate>Sat, 21 Nov 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cómo navegar entre las vistas de un componente creado con Angular Elements usando el patrón Mediator, sin depender del Router de Angular.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[IA para Desarrolladores: Estrategias para aumentar la productividad]]></title>
+            <link>https://rafaelneto.dev/blog/ia-desarrolladores-estrategias-aumentar-productividad/</link>
+            <guid>https://rafaelneto.dev/blog/ia-desarrolladores-estrategias-aumentar-productividad/</guid>
+            <pubDate>Sat, 12 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Estrategias clave para que los desarrolladores aprovechemos la IA: técnicas de prompts, generación de código, calidad y aprendizaje continuo.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[El cambio de rumbo en el software: Librerías de .NET que abandonan el open source]]></title>
+            <link>https://rafaelneto.dev/blog/cambio-rumbo-software-librerias-dotnet-abandonan-open-source/</link>
+            <guid>https://rafaelneto.dev/blog/cambio-rumbo-software-librerias-dotnet-abandonan-open-source/</guid>
+            <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Librerías populares de .NET y C# que abandonan el open source: un fenómeno que no puede dejarnos indiferentes en el desarrollo de software.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Mejores alternativas para la internacionalización (i18n) en Angular]]></title>
+            <link>https://rafaelneto.dev/blog/mejores-alternativas-internacionalizacion-i18n-angular/</link>
+            <guid>https://rafaelneto.dev/blog/mejores-alternativas-internacionalizacion-i18n-angular/</guid>
+            <pubDate>Sat, 28 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Las mejores alternativas para la internacionalización (i18n) en Angular y ofrecer nuestra aplicación en diferentes idiomas.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Crear expresiones lambda dinámicamente mediante el patrón Builder]]></title>
+            <link>https://rafaelneto.dev/blog/crear-expresiones-lambda-patron-builder/</link>
+            <guid>https://rafaelneto.dev/blog/crear-expresiones-lambda-patron-builder/</guid>
+            <pubDate>Wed, 10 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cómo crear expresiones lambda dinámicamente en C# mediante el patrón Builder para construir consultas con filtros opcionales.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Uso de claves SSH con Git y su configuración en BitBucket, Sourcetree, GitHub y VSCode]]></title>
+            <link>https://rafaelneto.dev/blog/uso-claves-ssh-git/</link>
+            <guid>https://rafaelneto.dev/blog/uso-claves-ssh-git/</guid>
+            <pubDate>Mon, 08 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cómo usar claves SSH con Git en lugar de HTTPS y configurarlas en BitBucket, Sourcetree, GitHub y Visual Studio Code.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Desuscribir de un observable RxJs BehaviorSubject en Angular]]></title>
+            <link>https://rafaelneto.dev/blog/desuscribir-observable-behaviorsubject-angular/</link>
+            <guid>https://rafaelneto.dev/blog/desuscribir-observable-behaviorsubject-angular/</guid>
+            <pubDate>Mon, 20 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Las diferentes formas de desuscribirse de un observable RxJs BehaviorSubject en Angular para evitar fugas de memoria.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Las 15 mejores extensiones de Visual Studio Code (VSCode 2023) para el desarrollo web]]></title>
+            <link>https://rafaelneto.dev/blog/15-mejores-extensiones-visual-studio-code-desarrollo-web/</link>
+            <guid>https://rafaelneto.dev/blog/15-mejores-extensiones-visual-studio-code-desarrollo-web/</guid>
+            <pubDate>Thu, 16 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Las 15 extensiones de Visual Studio Code que uso con asiduidad en el desarrollo web y que creo sinceramente que deberías probar.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[¿Cómo centrar un div?]]></title>
+            <link>https://rafaelneto.dev/blog/como-centrar-div/</link>
+            <guid>https://rafaelneto.dev/blog/como-centrar-div/</guid>
+            <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cómo centrar un div en HTML y CSS, una tarea común en el diseño web, y las diferentes técnicas para centrar cualquier contenido.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Internacionalización (i18n) en Angular]]></title>
+            <link>https://rafaelneto.dev/blog/internacionalizacion-i18n-angular/</link>
+            <guid>https://rafaelneto.dev/blog/internacionalizacion-i18n-angular/</guid>
+            <pubDate>Sun, 05 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cómo configurar el sistema oficial de internacionalización (i18n) de Angular para idiomatizar nuestra aplicación.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Flujos de autorización con OAuth 2.0 y OpenID Connect]]></title>
+            <link>https://rafaelneto.dev/blog/flujos-autorizacion-oauth-2-0-openid-connect/</link>
+            <guid>https://rafaelneto.dev/blog/flujos-autorizacion-oauth-2-0-openid-connect/</guid>
+            <pubDate>Tue, 28 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Los flujos de autorización de OAuth 2.0 y OpenID Connect que permiten a aplicaciones web, de escritorio, móviles o IoT acceder a recursos protegidos.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Autenticación y autorización basada en token (JWT Bearer) con ASP.NET Core]]></title>
+            <link>https://rafaelneto.dev/blog/autenticacion-autorizacion-jwt-bearer-aspnet-core/</link>
+            <guid>https://rafaelneto.dev/blog/autenticacion-autorizacion-jwt-bearer-aspnet-core/</guid>
+            <pubDate>Wed, 25 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cómo configurar la autenticación y autorización basada en token (JWT Bearer) en una API con ASP.NET Core.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Sobre los despliegues con Angular, la carga diferida de módulos y las ventajas de una PWA]]></title>
+            <link>https://rafaelneto.dev/blog/despliegues-angular-carga-diferida-modulos-ventajas-pwa/</link>
+            <guid>https://rafaelneto.dev/blog/despliegues-angular-carga-diferida-modulos-ventajas-pwa/</guid>
+            <pubDate>Thu, 28 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Los ficheros de fragmentos de código de un despliegue Angular en producción, la carga diferida de módulos y las ventajas de una PWA.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Crear un tema para Angular Material]]></title>
+            <link>https://rafaelneto.dev/blog/crear-tema-angular-material/</link>
+            <guid>https://rafaelneto.dev/blog/crear-tema-angular-material/</guid>
+            <pubDate>Sun, 03 Oct 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cómo crear un tema para Angular Material y configurar el color y la tipografía de sus componentes con las alternativas que ofrece Sass.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Instalar Angular Material]]></title>
+            <link>https://rafaelneto.dev/blog/instalar-angular-material/</link>
+            <guid>https://rafaelneto.dev/blog/instalar-angular-material/</guid>
+            <pubDate>Sun, 03 Oct 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[La instalación de Angular Material está guiada por Angular CLI: basta con ejecutar ng add @angular/material para instalar todo lo necesario.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Configurar y generar aplicaciones Angular para múltiples entornos personalizados]]></title>
+            <link>https://rafaelneto.dev/blog/configurar-generar-angular-multiples-entornos-personalizados/</link>
+            <guid>https://rafaelneto.dev/blog/configurar-generar-angular-multiples-entornos-personalizados/</guid>
+            <pubDate>Sat, 18 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cómo configurar package.json, angular.json y environments.ts para generar una aplicación Angular en múltiples entornos personalizados.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Optimizar Angular mediante el análisis de paquetes npm con webpack]]></title>
+            <link>https://rafaelneto.dev/blog/optimizar-angular-analisis-paquetes-npm-webpack/</link>
+            <guid>https://rafaelneto.dev/blog/optimizar-angular-analisis-paquetes-npm-webpack/</guid>
+            <pubDate>Thu, 16 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Además de la carga diferida o la estrategia OnPush, podemos optimizar una aplicación Angular analizando sus paquetes npm con webpack.]]></description>
+            <enclosure url="https://cloud.githubusercontent.com/assets/302213/20628702/93f72404-b338-11e6-92d4-9a365550a701.gif">
+            </enclosure>
+        </item>
+        <item>
+            <title><![CDATA[Cinco formas de centrar el texto en un div con CSS]]></title>
+            <link>https://rafaelneto.dev/blog/cinco-formas-centrar-texto-div-css/</link>
+            <guid>https://rafaelneto.dev/blog/cinco-formas-centrar-texto-div-css/</guid>
+            <pubDate>Mon, 13 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Aquí presento una lista de cinco técnicas para centrar el texto en un div mediante CSS.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Gestionar el estado de una aplicación Angular usando RxJs BehaviorSubject para servicios de datos observables]]></title>
+            <link>https://rafaelneto.dev/blog/gestionar-estado-angular-rxjs-behaviorsubject-servicios-datos-observables/</link>
+            <guid>https://rafaelneto.dev/blog/gestionar-estado-angular-rxjs-behaviorsubject-servicios-datos-observables/</guid>
+            <pubDate>Thu, 05 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Una alternativa sencilla a las librerías de gestión de estado en Angular: servicios de datos observables con RxJs BehaviorSubject.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Configurar el uso de variables de entorno en package.json para Windows]]></title>
+            <link>https://rafaelneto.dev/blog/configurar-variables-entorno-package-json-windows/</link>
+            <guid>https://rafaelneto.dev/blog/configurar-variables-entorno-package-json-windows/</guid>
+            <pubDate>Thu, 17 Jun 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cómo usar variables de entorno en los scripts de package.json en Windows, un problema que los usuarios de Linux/MAC felizmente desconocen.]]></description>
+        </item>
+    </channel>
+</rss>
